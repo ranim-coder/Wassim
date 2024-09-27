@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-IN" dir="ltr">
+  <head>
+    <title>To Wassim</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="SidPro" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-3EWCZHDCG9");
+    </script>
+  </head>
+  <body>
+    <center>
+      <div id="ask" class="container">
+        <div>
+          <h1 class="header_text">Will u date me ?</h1>
+        </div>
+        <br /><br /><br />
+        <img src="kkk.jpg" />
+        <br /><br /><br />
+        <div class="buttons">
+          <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+          <button
+            class="btn"
+            id="noButton"
+            onmouseover="moveButton()"
+            onclick="moveButton()"
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </center>
+    <div id="ans" class="container">
+      <div>
+        <h1 class="header_text">Nheeebkk !!</h1>
+      </div>
+      <br /><br /><br />
+      <div class="gif_container qrimage">
+        <img src="hob.gif" />
+      </div>
+    </div>
+  </body>
+  <script>
+    var debounce = function (fn, t = 1000) {
+      let timer;
+      return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), t);
+      };
+    };
+
+    function playAudio() {
+      document.getElementById("novideo").play();
+    }
+
+    function nextPage() {
+      //window.location.href = "yes.html";
+      document.getElementById("ans").style.display = "block";
+      document.getElementById("ask").style.display = "none";
+      document.getElementById("novideo").pause();
+      document.getElementById("ansvideo").play();
+    }
+
+    function moveButton() {
+      var x =
+        Math.random() *
+        (window.innerWidth - document.getElementById("noButton").offsetWidth);
+      var y =
+        Math.random() *
+        (window.innerHeight - document.getElementById("noButton").offsetHeight);
+      document.getElementById("noButton").style.left = `${x}px`;
+      document.getElementById("noButton").style.top = `${y}px`;
+      playAudio();
+    }
+  </script>
+</html>
